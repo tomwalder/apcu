@@ -459,7 +459,7 @@ function sortheader($key,$name,$extra='') {
 // create menu entry
 function menu_entry($ob,$title) {
 	global $MYREQUEST,$MY_SELF;
-	if ($MYREQUEST['OB']!=$ob) {
+	if (isset($MYREQUEST) && $MYREQUEST['OB']!=$ob) {
 		return "<li><a href=\"$MY_SELF&OB=$ob\">$title</a></li>";
 	} else if (empty($MYREQUEST['SH'])) {
 		return "<li><span class=active>$title</span></li>";
